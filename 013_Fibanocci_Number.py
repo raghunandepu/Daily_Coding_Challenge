@@ -15,7 +15,7 @@ Given N, calculate F(N)"""
       
 Time complexity = O(2**N)"""
 
-# Solution: This is iterative approach with memoization (storing previous result) which is better than recursive approach.
+# Solution: Iterative approach with memoization (storing previous result) which is better than recursive approach.
 
 def fib(N: int) -> int:
   if N < 2:
