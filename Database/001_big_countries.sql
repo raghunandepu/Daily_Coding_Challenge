@@ -27,7 +27,7 @@ For example, according to the above table, we should output:
 
 +-- Approach I: Using WHERE and OR. 
 +-- Write your MySQL query statement below
-SELECT name, population, area from World where area >3000000 OR population>25000000
+SELECT name, population, area from World where area >3000000 OR population>25000000;
 
 
 "Approach II: Using WHERE clause and UNION [Accepted]
