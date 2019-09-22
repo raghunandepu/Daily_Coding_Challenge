@@ -1,5 +1,5 @@
-+-- Swap Salary
-+-- https://leetcode.com/problems/swap-salary/
+-- Swap Salary
+-- https://leetcode.com/problems/swap-salary/
 
 "Given a table salary, such as the one below, that has m=male and f=female values. Swap all f and m values (i.e., change all f values to m and vice versa) with a single update statement and no intermediate temp table.
 
@@ -24,7 +24,7 @@ After running your update statement, the above salary table should have the foll
 | 4  | D    | m   | 500    |
 "
 
-# Write your MySQL query statement below
+-- Write your MySQL query statement below
 UPDATE salary
     SET sex=
     case

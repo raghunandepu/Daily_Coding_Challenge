@@ -1,6 +1,7 @@
-+-- Big Countries
+-- Big Countries
+-- https://leetcode.com/problems/big-countries/
 
-"
+/*
 There is a table World
 
 +-----------------+------------+------------+--------------+---------------+
@@ -23,14 +24,14 @@ For example, according to the above table, we should output:
 +--------------+-------------+--------------+
 | Afghanistan  | 25500100    | 652230       |
 | Algeria      | 37100000    | 2381741      |
-+--------------+-------------+--------------+"
++--------------+-------------+--------------+ */
 
 +-- Approach I: Using WHERE and OR. 
 +-- Write your MySQL query statement below
 SELECT name, population, area from World where area >3000000 OR population>25000000;
 
 
-"Approach II: Using WHERE clause and UNION [Accepted]
+/*Approach II: Using WHERE clause and UNION [Accepted]
 
 Algorithm
 
@@ -53,4 +54,4 @@ FROM
     world
 WHERE
     population > 25000000
-;"
+; */
