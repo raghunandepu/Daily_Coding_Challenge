@@ -7,6 +7,8 @@ Write a function that takes in a non-empty array of distinct integers and an int
 Sample input: [12, 3, 1, 2, -6, 5, -8, 6], 0
 Sample output: [[-8, 2, 6], [-8, 3, 5], [-6, 1, 5]]
 """
+# Solution:
+# HINT: Try sorting the array and traversing it once. At each number, place a left pointer on the number immediately to the right of your current number and a right pointer on the final number in the array. Check if the current number, the left number, and the right number sum up to the target sum. 
 
 # Time: O(n**2), Space: O(n)
 def threeNumberSum(array, targetSum):
