@@ -6,7 +6,8 @@ Our task is to design an optimal algorithm for checking whether a given string i
 
 # Solution:
 # We compare first index of string with last index of string using two pointers
-# O(1) space
+# Time: O(n) | O(1) space
+
 
 def palindrome_check(s):
   left_index = 0

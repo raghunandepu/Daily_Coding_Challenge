@@ -6,6 +6,8 @@ Sample input: [141, 1, 17, -7, -17, -27, 18, 541, 8, 7, 7]
 Sample output: [18, 141, 541]
 ​
 """
+# Time : O(n) | Space: O(1)
+# Hint : Try traversing the input array and updating the three largest numbers if necessary by shifting them accordingly.
 
 def findThreeLargestNumbers(array):
   threeLargest = [None, None, None]
@@ -22,6 +24,8 @@ def updateLargest(threeLargest, num):
     shiftAndUpdate(threeLargest, num, 1) # todo
     
 def shiftAndUpdate(array, num, idx):
+  # indices [0, 1, 2]
+  # array [x, y, z] will be shifted as [y, z, num] when index is 2
   for i in range(idx+1):
     if i == idx:
       array[i] = num
