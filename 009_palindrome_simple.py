@@ -27,3 +27,14 @@ if __name__ == "__main__":
   """def is_palindrome(s):
     return s==''.join(s[::-1])
   print (is_palindrome("abc"))"""
+  
+  # Recursive solution
+  # Time: O(n) | Space: O(n) due to call stack
+  def is_palindrome(s, i=0):
+    j = len(s) -1 -i # last char
+    if i >= j:
+      return True
+    if s[i] != s[j]:
+      return False
+    return is_palindrome(s, i+1)
+    
