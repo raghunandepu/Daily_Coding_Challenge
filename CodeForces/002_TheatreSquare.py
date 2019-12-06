@@ -6,6 +6,7 @@ The input contains three positive integer numbers in the first line: n,  m a
 Output
 Write the needed number of flagstones.
 '''
+# Reference: https://www.quora.com/How-do-I-solve-the-problem-Theatre-Square-on-Codeforces
 
 class TheatreSquare:
   def solve(self, n, m, a):
