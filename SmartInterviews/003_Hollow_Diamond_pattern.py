@@ -27,7 +27,7 @@ for tc in range(t):
     n = int(input())
     print (f'Case #{tc+1}:')
     for i in range(0, n//2 +1):
-        if (i==0 or i == n-1):
+        if i == 0:
             print(' '*(n//2)+'*')
         else:
             print(' '*(n//2 -i)+'*'+' '*(2*i -1)+'*')
