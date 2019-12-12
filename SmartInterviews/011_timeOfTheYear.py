@@ -45,4 +45,4 @@ import time
 
 t = int(input())
 for tc in range(t):
-    print(time.strftime("%d-%b-%Y %A", time.gmtime(int(input()))))
+    print(time.strftime("%d-%^b-%Y %A", time.gmtime(int(input()))))

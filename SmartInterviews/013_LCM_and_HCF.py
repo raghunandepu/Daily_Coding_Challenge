@@ -12,6 +12,8 @@ for tc in range(t):
     hcf = int(((a * b) / int(lcm)))
     print (f'{lcm} {hcf}')
         """
+# Reference: https://www.quora.com/How-do-I-take-an-LCM-for-large-numbers
+
 def hcf(a,b):
   if b==0:
     return a
