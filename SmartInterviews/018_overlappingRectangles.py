@@ -32,15 +32,23 @@ Sample Output 0
 23
 32"""
 
+def find_if_intersect(xbl1, ybl1, xtr1, ytr1,xbl2, ybl2, xtr2, ytr2 ):
+  if (xbl1 > xtr2 or xbl2 > xtr1):
+    return False
+  if (ybl1 >  ytr2 or ybl2 > ytr1):
+    return False
+  return True
+
 t = int(input())
 for tc in range(t):
   xbl1, ybl1, xtr1, ytr1 = map(int, input().split())
   xbl2, ybl2, xtr2, ytr2 = map(int, input().split())
+
   
   # xdist = abs(xtr1 - xbl1)
   # ydist = abs(ytr1 - ylb1)
   
-  # Total area = sum of areas of rectangle1, rectange2 and with intersected area subracted as it appears twice in both rectangles.
+  # Total area (if intersected) = sum of areas of rectangle1, rectange2 and with intersected area subracted as it appears twice in both rectangles.
   
   # Area of rectangle 1
   area1 = abs(xtr1 - xbl1) * abs(ytr1 - ybl1)
@@ -48,10 +56,13 @@ for tc in range(t):
   # Area of rectangle 2
   area2 = abs(xtr2 - xbl2) * abs(ytr2 - ybl2)
   
+  total_area = area1 + area2
+  
   # Intersecting area
   #x_dist = min(xtr2, xtr1) - max(xbl2, xbl1) 
   #y_dist = min(ytr2, ytr1) - max(ybl2, ybl1)
   intersect_area = (min(xtr2, xtr1) - max(xbl2, xbl1)) * (min(ytr2, ytr1) - max(ybl2, ybl1))
   
-  total_area = area1 + area2 - intersect_area
+  if find_if_intersect(xbl1, ybl1, xtr1, ytr1,xbl2, ybl2, xtr2, ytr2 ):
+    total_area = area1 + area2 - intersect_area
   print (total_area)

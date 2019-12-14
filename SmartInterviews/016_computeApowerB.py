@@ -49,6 +49,6 @@ for tc in range(t):
         if b&1:
             ans=(ans*x)%M
         x=(x*x)%M
-        b>>=1
+        b>>=1 # b = 1 * (b/2)
     print(ans)
     
