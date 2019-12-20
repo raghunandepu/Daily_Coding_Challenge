@@ -13,4 +13,6 @@ def selectionSort(array):
     
 def swap(i, j, array):
   array[i], array[j] = array[j], array[i]
-     
+
+array = [-3, 0, 7, 5, 4, 0, -3]
+print (selectionSort(array))
