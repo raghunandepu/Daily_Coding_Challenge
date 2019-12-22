@@ -20,7 +20,7 @@ def sockMerchant(n, ar):
         except:
             counts[i] = 1
     for k in counts.keys():
-        result = result + (counts[k] // 2)
+        result +=  (counts[k] // 2)
     return result
 
 
