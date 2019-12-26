@@ -12,6 +12,8 @@ def threeNumberSum(array, targetSum):
   array.sort()
   triplets = []
   for i in range(len(array) -2 ):
+    if array[i] > 0:
+      break # Since we do not need to check if all are positive numbers.
     left = i + 1
     right = len(array) -1
     while left < right:
@@ -26,7 +28,7 @@ def threeNumberSum(array, targetSum):
         right -= 1
   return triplets
   
-arr = [12, 3, 1, 2, -6, 5, -8, 6]
+arr = [ 1, -4, 0, 0, 5, -5, 1, 0, -2, 4, -4, 1, -1, -4, 3, 4, -1, -1, -3 ]
 targetSum = 0
 print (threeNumberSum(arr, targetSum)) 
 
