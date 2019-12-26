@@ -18,6 +18,9 @@ The solution set must not contain duplicate triplets. For example, given array S
 
 # @param A : list of integers
 # @return a list of list of integers
+
+# O(n^2) time | O(n) space
+
 def threeSum(A):
     targetSum = 0
     A.sort()

@@ -6,14 +6,12 @@ Write a function that takes in a non-empty array of distinct integers and an int
 Sample input: [12, 3, 1, 2, -6, 5, -8, 6], 0
 Sample output: [[-8, 2, 6], [-8, 3, 5], [-6, 1, 5]]"""
 
-
+# O(n^2) time | O(n) space
 
 def threeNumberSum(array, targetSum):
   array.sort()
   triplets = []
   for i in range(len(array) -2 ):
-    if array[i] > 0:
-      break # Since we do not need to check if all are positive numbers.
     left = i + 1
     right = len(array) -1
     while left < right:
