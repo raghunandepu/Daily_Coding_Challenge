@@ -19,6 +19,8 @@ Given input array A = [1,1,2],
 Your function should return length = 2, and A is now [1,2]. 
 
 """
+# Time Complexity : O(n)
+# Auxiliary Space : O(1)
 
 class Solution:
     # @param A : list of integers
