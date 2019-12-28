@@ -97,6 +97,7 @@ output
 1439
 1180
 1"""
+# Result : Accepted
 
 class MinutesBeforeNY:
   def solve(self, hh, mm):
