@@ -6,6 +6,31 @@ Sample input: "abaxyzzyxf"
 Sample output: "xyzzyx"
 ​
 """
+# Solution 1:
+# O(n**3)
+
+# O(n^3) time | O(1) space
+"""
+def longestPalindromicSubstring(string):
+    longest = ""
+    for i in range(len(string)):
+        for j in range(i, len(string)):
+            substring = string[i : j + 1]
+            if len(substring) > len(longest) and isPalindrome(substring):
+                longest = substring
+    return longest
+
+def isPalindrome(string):
+    leftIdx = 0
+    rightIdx = len(string) - 1
+    while leftIdx < rightIdx:
+        if string[leftIdx] != string[rightIdx]:
+            return False
+        leftIdx += 1
+        rightIdx -= 1
+    return True"""
+    
+# Solution 2:
 # Time: O(n**2) | Space: O(n)
 
 def longestPalindromicSubstring(string):
