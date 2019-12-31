@@ -1,5 +1,7 @@
 #http://m3.codeforces.com/contest/1270/problem/B
 
+# Not accepted: Wrong Answer
+
 class InteresingSubarray:
   def solve(self, arr, n):
     m = min(arr)
