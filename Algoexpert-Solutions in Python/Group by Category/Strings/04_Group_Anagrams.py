@@ -6,6 +6,8 @@ Sample input: ["yo", "act", "flop", "tac", "cat", "oy", "olfp"]
 Sample output: [["yo", "oy"], ["flop", "olfp"], ["act", "tac", "cat"]]"""
 
 # Time: O(w * n * log(n)) | O(wn) space
+# w words, n log n is for sorting the word
+
 def groupAnagrams(words):
   anagrams = {}
   for word in words:
