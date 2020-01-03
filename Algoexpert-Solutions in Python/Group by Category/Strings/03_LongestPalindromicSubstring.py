@@ -33,7 +33,7 @@ def isPalindrome(string):
 # Solution 2:
 # Time: O(n**2) | Space: O(n)
 
-def longestPalindromicSubstring(string):
+"""def longestPalindromicSubstring(string):
   currentLongest = [0, 1] #Let it be the first char for now
   for i in range(1, len(string)):
     odd = getLongestPalindromeFrom(string, i - 1, i + 1) # i-1 left index, i+1 right index
@@ -52,4 +52,32 @@ def getLongestPalindromeFrom(string, leftIdx, rightIdx):
   return [leftIdx + 1, rightIdx]
   
   
-print (longestPalindromicSubstring("abaxyzzyxf"))
+print (longestPalindromicSubstring("abaxyzzyxf"))"""
+
+# Solution 3: Same as solution 2 but much simpler
+# Time: O(n**2) | Space: O(n)
+
+class Solution:
+    # @param A : string
+    # @return a strings
+    def longestPalindrome(self, A):
+        if len(A) == 0:
+            return None
+        longest_pal = ""
+        for i in range(len(A)):
+            p1 = self.expandAroundCenter(A, i, i)
+            if len(p1) > len(longest_pal):
+                longest_pal = p1
+            p2 = self.expandAroundCenter(A, i, i+1)
+            if len(p2) > len(longest_pal):
+                longest_pal = p2
+        return longest_pal
+            
+        
+    def expandAroundCenter(self, A, left, right):
+        while left >=0 and right < len(A):
+            if A[left] != A[right]:
+                break
+            left -=1
+            right += 1
+        return A[left+1: right]
