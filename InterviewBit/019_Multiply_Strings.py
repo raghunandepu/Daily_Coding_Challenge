@@ -15,6 +15,8 @@ given strings "12", "10", your answer should be “120”.
 NOTE : DO NOT USE BIG INTEGER LIBRARIES ( WHICH ARE AVAILABLE IN JAVA / PYTHON ). 
 We will retroactively disqualify such submissions and the submissions will incur penalties."""
 
+# Hint: If length of input strings are N and M, then the expected comlexity is O(N*M) here.
+
 class Solution:
     # @param A : string
     # @param B : string
