@@ -17,7 +17,7 @@ Time complexity = O(2**N)"""
 
 # Solution: Iterative approach with memoization (storing previous result) which is better than recursive approach.
 
-def fib(N: int) -> int:
+def fibanocci(N: int) -> int:
   if N < 2:
     return N
   fib = [0 for i in range(N+1)]
@@ -28,7 +28,7 @@ def fib(N: int) -> int:
       i+=1
   return fib[N]
   
-print (fib(4))
+print (fibanocci(4))
 
 """
 Complexity Analysis:
