@@ -3,6 +3,10 @@
 # Time complexity: O(n*log(logn)) for sleeve of eratoshenes
 # Refer for theory: https://www.geeksforgeeks.org/sieve-of-eratosthenes/
 
+# A Naive approach is to run a loop from low to high and check each number for primeness.
+
+# A Better Approach is to precalculate primes upto the maximum limit using Sieve of Eratosthenes, then print all prime numbers in range.
+
 import math
 def primesgenerator(n):
   primes = [True for _ in range(n+1)]

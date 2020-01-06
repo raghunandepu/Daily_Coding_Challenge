@@ -81,26 +81,36 @@ for tc in range(t):
 
 # Solution 2:
 # O(n^2): By checking substring of even and odd (Expand Around Center)
-def solve(string, n):
-    currentLargest = [0, 1]
-    for i in range(1,n):
-        odd = palindrome(string, i-1, i+1)
-        even = palindrome(string, i-1, i)
-        largest = max(odd, even, key=lambda x: x[1] - x[0])
-        currentLargest = max(largest, currentLargest, key=lambda x: x[1]-x[0])
-        
-    return len(string[currentLargest[0]:currentLargest[1]])
-        
+def solve(A, n):
+    if n == 0:
+        return None
+    longest_pal = ""
+    for i in range(n):
+        p1 = expandAroundCenter(A, i, i)
+        if len(p1) > len(longest_pal):
+            longest_pal = p1
 
-def palindrome(string, leftIdx, rightIdx):
-    n = len(string)
+        p2 = expandAroundCenter(A, i, i+1)
+        if len(p2) > len(longest_pal):
+            longest_pal = p2
+    return len(longest_pal)
 
-    while leftIdx >=0 and rightIdx < n:
-        if string[leftIdx] != string[rightIdx]:
+
+def expandAroundCenter(A, left, right):
+    n = len(A)
+    while left >=0 and right < n:
+        if A[left] != A[right]:
             break
-        leftIdx -= 1
-        rightIdx += 1
-    return [leftIdx+1, rightIdx]
+        left -=1
+        right += 1
+    return A[left+1: right]
+
+t = int(input())
+for tc in range(t):
+    n = int(input())
+    string = input()
+    result = solve(string, n)
+    print (result)
 
 t = int(input())
 for tc in range(t):
