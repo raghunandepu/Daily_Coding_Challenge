@@ -35,6 +35,7 @@ class Solution:
             p1 = self.expandAroundCenter(A, i, i)
             if len(p1) > len(longest_pal):
                 longest_pal = p1
+                
             p2 = self.expandAroundCenter(A, i, i+1)
             if len(p2) > len(longest_pal):
                 longest_pal = p2

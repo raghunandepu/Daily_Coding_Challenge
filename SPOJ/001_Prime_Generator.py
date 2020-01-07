@@ -26,7 +26,9 @@ Output:
 3
 5
 Warning: large Input/Output data, be careful with certain languages (though most should be OK if the algorithm is well designed)"""
-import math
+
+# Solution 1: N* (sqrt(N)) - Timeout
+"""import math
 
 def primes(start, end):
   result = []
@@ -44,5 +46,7 @@ for tc in range(t):
   start, end = map(int, input().split())
   result = primes(start, end)
   for e in result:
-    print (e)
+    print (e)"""
+    
+
   
