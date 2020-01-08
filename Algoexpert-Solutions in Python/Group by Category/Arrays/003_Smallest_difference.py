@@ -13,12 +13,12 @@ Sample output: [28, 26]"""
 
 def smallestDifference(arrayOne, arrayTwo):
     # Write your code here.
-	arrayOne.sort()
+	arrayOne.sort() # sort in place
 	arrayTwo.sort()
 	
 	idxOne = 0
 	idxTwo = 0
-	smallest = float("inf")
+	smallest = float("inf") # Infinity to compare with our differences later
 	current = float("inf")
 	smallestPair = []
 	while idxOne < len(arrayOne) and idxTwo < len(arrayTwo):
