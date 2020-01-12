@@ -46,6 +46,8 @@ Output 2:
     0
 """
 # Approach: Using Binary search 
+# O(logMN) where M is the number of rows and N is the number of columns
+
 class Solution:
   def searchInMatrix(self, matrix, target):
     if not matrix or target is None:
