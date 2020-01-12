@@ -53,22 +53,27 @@ def solution(A, B):
   
   # Start searching from top right
   
-  i = 0 # first row
+  i = 0 # first row as given row numbers start from 1
   j = len(A[0]) - 1 # last column
   n = len(A) # no of rows
   
-  while (i < n and j >=0 ):
+  while (i < n and j >= 0 ):
     if A[i][j] == B:
-      return (i * 1009) + j
+      i += 1   # just adding 1 to i and j as the answer expects
+      j += 1
+      return (i * 1009 + j)
+    
     if A[i][j] > B:
+      # skip the current column
       j -= 1
     else:
+      # skip the current row
       i += 1
   return -1
 
 A = [[1, 2, 3],
      [4, 5, 6],
      [7, 8, 9]]
-B = 10
+B = 2
 
 print (solution(A, B))
