@@ -52,6 +52,7 @@ def solution(A, B):
   Return the position of B and if it is not present in A return -1 instead."""
   
   # Start searching from top right
+  # Complexity: O(N+M) where n is the number of rows and M is the number of columns
   
   i = 0 # first row as given row numbers start from 1
   j = len(A[0]) - 1 # last column

@@ -14,6 +14,8 @@ Input : mat[4][4] = { {10, 20, 30, 40},
               x = 100
 Output : Element not found"""
 
+# Complexity: O(N+M) where n is the number of rows and M is the number of columns
+
 def search(matrix, target):
   
   # Choosing top right element to begin search
