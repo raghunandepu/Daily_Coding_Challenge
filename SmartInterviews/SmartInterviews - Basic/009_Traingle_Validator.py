@@ -25,6 +25,7 @@ Explanation 0
 
 Self Explanatory"""
 
+# Approach: A triangle is valid if sum of its two sides is greater than the third side.
 a, b, c = map(int, input().split())
 def solve(a, b, c):
     if (a+b <= c) or (a+c <= b) or (b+c <= a):
