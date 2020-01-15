@@ -27,7 +27,7 @@ Explanation 0
 
 Self Explanatory"""
 
-
+# O(logn)
 N, K = map(int, input().split())
 arr = list(map(int, input().split()))
 
