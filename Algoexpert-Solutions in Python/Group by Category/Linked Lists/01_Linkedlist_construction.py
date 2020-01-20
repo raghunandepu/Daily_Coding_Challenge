@@ -128,7 +128,7 @@ class DoublyLinkedList:
     if node.next is not None:
       node.next.prev = node.prev
     
-    # Removin the bindings or connections now 
+    # Removin the bindings or connections now  
     node.prev = None
     node.next = None
     
