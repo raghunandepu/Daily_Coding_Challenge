@@ -8,7 +8,11 @@ Write a function that takes in the head of a Singly Linked List (assume that the
 # Time: O(n) where n is the length of the LL | Space: O(1)
 
 # Approach: Remember to use three variables here, first pointer points to null first.
-
+"""----
+class Node:
+  def __init__(self, value):
+    self.next = None
+ ---   """
 def reverseLinkedList(head):
   p1 = None
   p2 = head
