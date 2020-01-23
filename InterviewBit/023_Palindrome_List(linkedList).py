@@ -95,10 +95,11 @@ class LinkedList:
       print ("list is empty")
       return
     if self.head.info == data:
-      self.temp = self.head
+      self.temp = self.head  # just storing the node in temp to be deleted
       self.head = self.head.next
       return
-    self.p = None
+      
+    self.p = None # mainting a prev pointer to connect later
     self.curr = self.head
     while self.curr is not None:
       if self.curr.info == data:
