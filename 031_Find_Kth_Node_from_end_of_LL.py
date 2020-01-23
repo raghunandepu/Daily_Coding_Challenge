@@ -123,7 +123,7 @@ def kthnode(llist,k):
     p2 = llist.head
     for i in range(k):
       p2 = p2.next
-    while p2.next is not None:
+    while p2 is not None:
       p1 = p1.next
       p2 = p2.next
     return p1.info
