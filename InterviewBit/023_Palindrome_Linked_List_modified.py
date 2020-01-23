@@ -41,7 +41,7 @@ class LinkedList:
     pos = 1
     while temp:
       if temp.data == value:
-        print(The value found at", pos)
+        print("The value found at", pos)
       temp = temp.next
       pos += 1
     print("Value not found in the linked list")
@@ -94,7 +94,7 @@ class LinkedList:
     if self.head is None:
       print ("list is empty")
       return
-    if self.head.info == data:
+    if self.head.data == data:
       self.temp = self.head  # just storing the node in temp to be deleted
       self.head = self.head.next
       return
@@ -102,7 +102,7 @@ class LinkedList:
     self.p = None # mainting a prev pointer to connect later
     self.curr = self.head
     while self.curr is not None:
-      if self.curr.info == data:
+      if self.curr.data == data:
         self.temp = self.p.next
         self.p.next = self.temp.next
         return
@@ -110,64 +110,74 @@ class LinkedList:
       self.p = self.curr
       self.curr = self.curr.next
       
-  def reverse(head):
-    prev = None
-    curr = head
-    while curr is not None:
-      Next = curr.next 
-      curr.next = prev
-      prev = curr
-      curr = Next
-    head = prev
-    return head
-  
-  def compareList(head1, head2):
-    while head1 is not None and head2 is not None:
-      if head1.data = head2.data:
-        head1 = head1.next
-        head2 = head2.next
-      else:
-        return False
-      if head1 is None and head2 is None:
-        return True
+def reverse(head):
+  prev = None
+  curr = head
+  while curr is not None:
+    Next = curr.next 
+    curr.next = prev
+    prev = curr
+    curr = Next
+  head = prev
+  return head
+
+def compareList(head1, head2):
+  while head1 is not None and head2 is not None:
+    if head1.data == head2.data:
+      head1 = head1.next
+      head2 = head2.next
+    else:
       return False
     
+  if head1 is None and head2 is None:
+    return True
+  return False
   
-  def isPalindrome(llist):
-    head = llist.head
-    slowptr = head
-    fastptr = head
-    slow_prev = None
-    nextHalf = None
-    midnode = None
+
+# Time: O(n), space: 0(1) using two pointer technique
+def isPalindrome(llist):
+  head = llist.head
+  slowptr = head
+  fastptr = head
+  slow_prev = None
+  nextHalf = None
+  midnode = None
+  
+  if head is not None and head.next is not None:
+    while fastptr is not None and fastptr.next is not None:
+      fastptr = fastptr.next.next 
+      slow_prev = slowptr # saving slow prev pointer also here
+      slowptr = slowptr.next
     
-    if head is not None and head.next is not None:
-      while fastptr is not None and fastptr.next is not None:
-        fastptr = fastptr.next.next 
-        slow_prev = slowptr # saving slow prev pointer also here
-        slowptr = slowptr.next
-      
-      if fastptr is Not None:
-        # it means we are checking for odd length palindrome
-        midnode = slowptr
-        slowptr = slowptr.next # next half starting
-      
-      nextHalf = slowptr
-      slow_prev.next = None
-      nextHalf = reverse(nextHalf) # using reverse function created above
-      result = compareList(head, nextHalf)
-      nextHalf = reverse(nextHalf) # reverting back the reversed second half
-      
-      # Now we need to join back the second half with first half.
-      if midnode is not None:
-        slow_prev.next = midnode
-        midnode.next = nextHalf
-      else:
-        slow_prev.next = nextHalf
-    return result
+    if fastptr is not None:
+      # it means we are checking for odd length palindrome
+      midnode = slowptr
+      slowptr = slowptr.next # next half starting
+    
+    nextHalf = slowptr
+    slow_prev.next = None
+    nextHalf = reverse(nextHalf) # using reverse function created above
+    result = compareList(head, nextHalf)
+    nextHalf = reverse(nextHalf) # reverting back the reversed second half
+    
+    # Now we need to join back the second half with first half.
+    if midnode is not None:
+      slow_prev.next = midnode
+      midnode.next = nextHalf
+    else:
+      slow_prev.next = nextHalf
+  return result
         
         
-        
+if __name__=='__main__':
+    llist=LinkedList()
+    n=int(input())
+    for i in range(n):
+        llist.insert_at_end((input()))
+    if isPalindrome(llist) is True:
+        print("palindrome")
+    else:
+        print("Not palindrome")
         
         
         
