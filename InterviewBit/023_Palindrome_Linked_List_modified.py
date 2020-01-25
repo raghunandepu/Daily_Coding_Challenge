@@ -155,7 +155,7 @@ def isPalindrome(llist):
       slowptr = slowptr.next # next half starting
     
     nextHalf = slowptr
-    slow_prev.next = None
+    slow_prev.next = None # cutting the first half
     nextHalf = reverse(nextHalf) # using reverse function created above
     result = compareList(head, nextHalf)
     nextHalf = reverse(nextHalf) # reverting back the reversed second half
