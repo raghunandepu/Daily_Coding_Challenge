@@ -95,12 +95,24 @@ For each test case, print "YES" if Polycarp can distribute all 𝑛
 n
  coins between his sisters and "NO" otherwise."""
  
+ # Working solution
  
 class Collecting_Coins:
   def solve(self, a, b, c, n):
-    result = (a + b + c + n) % 3
-    if result == 0:
-      return "YES"
+    resMax = max(max(a,b), c)
+    if resMax == a:
+      requiredCoins = 2*a - (b+c) # (Max -b) + (Max - c) coins required to share
+    elif resMax == b:
+      requiredCoins = 2*b - (a+c) # (Max -a) + (Max - c)
+    else:
+      requiredCoins = 2*c - (b+a) # (Max -b) + (Max - a)
+      
+    if n < requiredCoins:
+      return "NO"
+    else:
+        result = (a + b + c + n) % 3
+        if result == 0:
+          return "YES"
     return "NO"    
   
 if __name__ == '__main__':
