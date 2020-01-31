@@ -41,14 +41,15 @@ Sample Output 0
 1 4 
 5 7 
 15 
-17 """
+17 
+"""
 
 
 class Node:
     def __init__(self, info):
         self.info = info
         self.left = None
-        self.right = None
+        self.right = None 
 class BST:
     def __init__(self):
         self.root = None
