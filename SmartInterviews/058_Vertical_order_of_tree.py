@@ -116,5 +116,5 @@ for tc in range(t):
     for i in range(1,n):
         tree.insert(root, Node(arr[i]))
     printVerticalOrder(root)
-    print()
+    print() 
 
