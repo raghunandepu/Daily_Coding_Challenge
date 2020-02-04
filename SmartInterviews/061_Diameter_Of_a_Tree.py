@@ -32,6 +32,11 @@ Sample Output 0
 4
 6
 """
+
+# Approach: Use height of the tree
+# Ans will be sum of left height, right height and 1
+# Time: O(n)
+
 import sys
  
 
