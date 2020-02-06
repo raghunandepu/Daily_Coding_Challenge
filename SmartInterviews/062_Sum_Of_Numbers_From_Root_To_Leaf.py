@@ -32,3 +32,51 @@ Sample Output 0
 666
 497095"""
 
+M = 1e9+7
+class Node:
+    def __init__(self, info):
+        self.info = info
+        self.left = None
+        self.right = None
+        
+class BST:
+    def __init__(self):
+        self.root = None
+        
+    def insert(self, root, node):
+        if root is None:
+            root = node
+        else: 
+            if root.info < node.info:
+                if root.right is None:
+                    root.right = node
+                else:
+                    self.insert(root.right, node)
+            else:
+                if root.left is None:
+                    root.left = node
+                else:
+                    self.insert(root.left, node)
+
+def rootToLeafSum(root, val):
+    if root is None:
+        return 0
+    
+    # update value
+    val = int((int(str(val) + str(root.info)))%M)
+    
+    if root.left is None and root.right is None:
+        return int(int(val) % M)
+    
+    return (rootToLeafSum(root.left, val) + rootToLeafSum(root.right, val))
+
+
+tree = BST()
+t = int(input())
+for tc in range(t):
+    n = int(input())
+    arr = list(map(int, input().split()))
+    root = Node(arr[0])
+    for i in range(1,n):
+        tree.insert(root, Node(arr[i]))
+    print(rootToLeafSum(root, val=0))
