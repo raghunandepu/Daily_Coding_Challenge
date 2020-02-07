@@ -68,7 +68,7 @@ def rootToLeafSum(root, val):
     if root.left is None and root.right is None:
         return int(int(val) % M)
     
-    return (rootToLeafSum(root.left, val) + rootToLeafSum(root.right, val))
+    return int ((rootToLeafSum(root.left, int(val % M)) + rootToLeafSum(root.right, int(val % M))) %M)
 
 
 tree = BST()
