@@ -34,3 +34,20 @@ print (maxSubsetSumNoAdjacent(array))
 # Solution 2:
 # Do you really need to store the entire array mentioned in Hint #1, or can you somehow store just the max sums that you need at any point in time?
 
+# O(n) | O(1)
+def maxSubsetSumNoAdjacent2(array):
+  if not len(array):
+    return 0
+  elif len(array) == 1:
+    return array[0]
+  second = array[0]
+  first = max(array[0], array[1])
+  for i in range(2, len(array)):
+    current = max(first, second + array[i])
+    second = first
+    first = current
+  return first
+
+array = [75, 105, 120, 75, 90, 135]
+print (maxSubsetSumNoAdjacent2(array))
+  
