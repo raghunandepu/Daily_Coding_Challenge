@@ -28,7 +28,7 @@ def fibanocci(N: int) -> int:
       i+=1
   return fib[N]
   
-print (fibanocci(4))
+print (fibanocci(100))
 
 """
 Complexity Analysis:
